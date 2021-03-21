@@ -115,7 +115,6 @@ public class EnemyAi : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-
     }
 
 

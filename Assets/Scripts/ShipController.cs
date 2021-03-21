@@ -13,6 +13,8 @@ public class ShipController : MonoBehaviour
 
     public float lookRotateSpeed = 90f;
     private Vector2 lookInput, screenCenter, mouseDistance;
+    public GameObject Thrusters;
+    public GameObject Boost;
 
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
@@ -51,7 +53,7 @@ public class ShipController : MonoBehaviour
         {
             forwardSpeed = (forwardSpeed + boost);
         }
-        
+
         if (Input.GetKeyUp(key))
         {
             forwardSpeed = unBoosted;
@@ -61,5 +63,28 @@ public class ShipController : MonoBehaviour
         transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
         transform.position += transform.right * activeStrafeSpeed * Time.deltaTime;
         transform.position += transform.up * ActioveHoverSpeed * Time.deltaTime;
+
+        if (Input.GetButtonDown("forward"))
+        {
+            Thrusters.SetActive(true);
+        }
+
+
+        if (Input.GetButtonUp("forward"))
+        {
+            Thrusters.SetActive(false);
+        }
+
+        if (Input.GetButtonDown("boost"))
+        {
+            Boost.SetActive(true);
+        }
+
+
+        if (Input.GetButtonUp("boost"))
+        {
+            Boost.SetActive(false);
+        }
+
     }
 }
