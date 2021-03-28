@@ -4,13 +4,15 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PolygonSpace_Planet_Lines_01_C
-  m_Shader: {fileID: 4800000, guid: 6c02f021372cf984b95c361a21269d0e, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: eaaf78c712eddcb47a6a599d04aea29b, type: 3}
+  m_ShaderKeywords: _EMISSION _FRESNEL_ON _GLOSSYREFLECTIONS_ON _SPECULARHIGHLIGHTS_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -73,8 +75,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _PlanetOverlayMiddle:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PlanetOverlayTop:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _PlanetSurfaceColor:
         m_Texture: {fileID: 2800000, guid: 67c01b19dd0b2354f932b32748d8491d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
@@ -100,6 +114,9 @@ Material:
     m_Floats:
     - _ASEOutlineWidth: 0.01
     - _BumpScale: 1
+    - _CloudCoverage: 0
+    - _CloudPower: 0
+    - _CloudSpeed: 0
     - _Cloud_Contrast: 1.2
     - _Cloud_Falloff: 4.24
     - _Cloud_Tiling: -3.3
@@ -112,6 +129,9 @@ Material:
     - _Float1: -0.26
     - _Float2: 0.54
     - _Fresnel: 8.35
+    - _FresnelDiffCont: 0.5
+    - _FresnelPower: 0.5
+    - _FresnelStrength: 0.2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -124,6 +144,8 @@ Material:
     - _PlanetSurfaceContrast: -3.6
     - _PlanetSurfaceFloat: 2
     - _PlanetSurfaceTiling: 1
+    - _Planet_Falloff: 0
+    - _Planet_Tiling: 0
     - _RimPower: 1.48
     - _Scale: -0
     - _SmoothnessTextureChannel: 0
@@ -131,6 +153,7 @@ Material:
     - _SrcBlend: 1
     - _Strength: 2.72
     - _Tiling: 0.97
+    - _Transmission: 0
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
@@ -138,10 +161,14 @@ Material:
     m_Colors:
     - _ASEOutlineColor: {r: 0.5181034, g: 0.4426903, b: 0.6764706, a: 0}
     - _BaseColor: {r: 0.30147058, g: 0.1491454, b: 0.06650086, a: 0}
+    - _CloudColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.7931032, b: 1, a: 0}
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelTint: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.3693436, g: 0.27059907, b: 0.4044118, a: 0}
     - _Second_Color: {r: 0.2647059, g: 0.07678082, b: 0.02141004, a: 0}
     - _Size: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
