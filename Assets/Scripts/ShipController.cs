@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-
     public float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 5f, boost = 200f, unBoosted = 25f;
     private float activeForwardSpeed, activeStrafeSpeed, ActioveHoverSpeed;
     private float forwardAcceleration = 2.5f, strafeAcceleration = 2f, hoverAcceleration = 2f;
@@ -19,7 +18,8 @@ public class ShipController : MonoBehaviour
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
 
-    // Start is called before the first frame update
+    Animator animator;
+
     void Start()
     {
         screenCenter.x = Screen.width * .5f;
@@ -27,12 +27,11 @@ public class ShipController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Confined;
 
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
-    {
-       
+    {       
         lookInput.x = Input.mousePosition.x;
         lookInput.y = Input.mousePosition.y;
 
@@ -57,8 +56,7 @@ public class ShipController : MonoBehaviour
         if (Input.GetKeyUp(key))
         {
             forwardSpeed = unBoosted;
-        }
-           
+        }           
 
         transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
         transform.position += transform.right * activeStrafeSpeed * Time.deltaTime;
@@ -68,7 +66,6 @@ public class ShipController : MonoBehaviour
         {
             Thrusters.SetActive(true);
         }
-
 
         if (Input.GetButtonUp("forward"))
         {
@@ -80,11 +77,14 @@ public class ShipController : MonoBehaviour
             Boost.SetActive(true);
         }
 
-
         if (Input.GetButtonUp("boost"))
         {
             Boost.SetActive(false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            animator.enabled = true;
+        }        
     }
 }

@@ -32,11 +32,4 @@ public class Shooting : MonoBehaviour
         Destroy(clone, 3.0f);
 
     }
-
-
-    //IEnumerator DestroyProjectile(GameObject projectile, float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-    //    Destroy(projectile);
-    //}
 }
